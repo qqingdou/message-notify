@@ -1,6 +1,7 @@
 {
     "name": "qqingdou/message-notify",
     "description": "auto catch exception and notify",
+    "keywords": ["message", "notify", "exception", "auto", "catch"],
     "type": "library",
     "require": {
         "php": ">=5.4.0"
