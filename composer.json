@@ -1,0 +1,27 @@
+{
+    "name": "qqingdou/message-notify",
+    "description": "auto catch exception and notify",
+    "type": "library",
+    "require": {
+        "php": ">=5.4.0"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "alvin",
+            "email": "pingtang000@foxmail.com"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/qqingdou/message-notify/issues?state=open",
+        "source": "https://github.com/qqingdou/message-notify"
+    },
+    "autoload": {
+        "psr-4": {"MessageNotify\\": "src/"}
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
+        }
+    }
+}
