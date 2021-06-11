@@ -24,7 +24,34 @@ class MessageBody
 	private $customData		=	'';
 	private $userAgent		=	'';
 	private $clientIp		=	'';
+	private $requestId		=	'';
 
+	/**
+	 * 获取每个请求ID
+	 * @return string
+	 */
+	private function getMyRequestId(){
+		return	md5(time() . rand() . uniqid() . random_int(1, PHP_INT_MAX));
+	}
+	/**
+	 * @return string
+	 */
+	public function getRequestId()
+	{
+		$requestId	=	$this->requestId;
+		if(!$requestId){
+			$requestId	=	$this->getMyRequestId();
+		}
+		return	$requestId;
+	}
+
+	/**
+	 * @param string $requestId
+	 */
+	public function setRequestId($requestId)
+	{
+		$this->requestId = $requestId;
+	}
 	/**
 	 * 获取WEB端IP
 	 * @return string
@@ -273,6 +300,7 @@ class MessageBody
 			'time'			=>	$this->getTime(),
 			'user_agent'	=>	$this->getUserAgent(),
 			'client_ip'		=>	$this->getClientIp(),
+			'request_id'	=>	$this->getRequestId(),
 			'custom_data'	=>	$this->getCustomData(),
 		);
 	}
