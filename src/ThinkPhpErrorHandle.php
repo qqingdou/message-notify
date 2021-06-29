@@ -11,7 +11,6 @@
 namespace MessageNotify;
 
 use Exception;
-use MessageNotify\MessageNotify;
 use think\console\Output;
 use think\exception\Handle;
 
