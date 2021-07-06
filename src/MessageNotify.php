@@ -130,6 +130,20 @@ class MessageNotify
 	 * @return bool
 	 */
 	private function notify($data){
+		return	$this->message(json_encode($data));
+	}
+
+	/**
+	 * 推送自定义消息
+	 * @param $message
+	 * @return bool
+	 */
+	public function message($message){
+
+		if(!$message){
+			return false;
+		}
+
 		$time		=	time();
 		$nonce		=	md5(uniqid() . time() . rand());
 		$headers	=	array(
@@ -137,7 +151,7 @@ class MessageNotify
 		);
 
 		$aesKey				=	$this->getAesKey();
-		$aesEncryptData		=	self::aesEncrypt(json_encode($data), $aesKey);
+		$aesEncryptData		=	self::aesEncrypt($message, $aesKey);
 
 		$params				=	[
 			'time'			=>	$time,
