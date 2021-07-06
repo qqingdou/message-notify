@@ -138,7 +138,7 @@ class MessageNotify
 	 * @param $message
 	 * @return bool
 	 */
-	public function message($message){
+	private function message($message){
 
 		if(!$message){
 			return false;
