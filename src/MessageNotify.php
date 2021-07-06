@@ -169,11 +169,11 @@ class MessageNotify
 	 */
 	private function getAesKey(){
 		$key		=	$this->getKey();
-		$payLength	=	16;
-		if(strlen($key) < $payLength){
-			return	str_pad($key, $payLength, '0', STR_PAD_RIGHT);
+		$keyLength	=	16;
+		if(strlen($key) < $keyLength){
+			return	str_pad($key, $keyLength, '0', STR_PAD_RIGHT);
 		}else{
-			return	substr($key, 0, $payLength);
+			return	substr($key, 0, $keyLength);
 		}
 	}
 
